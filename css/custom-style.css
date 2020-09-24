@@ -2,6 +2,8 @@ body {
     background-image: url('../images/bg.png');
 }
 
+/*---------------Navigation----------------*/
+
 nav {
     opacity: 0.5;
 }
@@ -9,6 +11,8 @@ nav {
 .nav-item {
     margin: 0 120px 0 0;
 }
+
+/*----------------Start Page----------------*/
 
 .start-page {
     width: 100%;
@@ -20,25 +24,29 @@ nav {
     position: relative;
 }
 
+/*---------------Welcome Page---------------*/
+
 .welcome-page-content {
     position: absolute;
     top: 20%;
     left: 5%;
 }
 
-.footer {
-    bottom: 0;
-    background-color:dimgray;
-    opacity: 0.2;
-    color: aliceblue;
-    text-align: center;
+.welcome-page-content h1 {
+    font-size: 3em;
+}
+
+.welcome-page-content p {
+    font-size: 1.5em;
 }
 
 .start-page-content {
     width: 100%;
 }
 
-.popular-countries-col h2{
+/*-----------------Popular Countries---------------*/
+
+.popular-countries-col h2 {
     text-align: center;
     font-family: 'Underdog', cursive;
     font-weight: 700;
@@ -66,20 +74,6 @@ nav {
     color: #658aa4;
 }
 
-@media (max-width: 1000px) {
-    .popular-countries-col h2 {
-        font-size: 1.5em;
-    }
-    
-    .popular-countries-boxes h3 {
-        font-size: 1em;
-    }
-    
-    .popular-countries-boxes p {
-        font-size: 0.8em;
-    }
-}
-
 .box-1 {
     flex: 1;
     text-align: center;
@@ -101,4 +95,108 @@ nav {
 
 .circle-photo {
     border-radius: 100%;
+}
+
+/*-------------Sign Up Form--------------*/
+
+#form-bg-id, #form-relative-container {
+    display: none;
+    width: 30%;
+    height: 40%;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    border-radius: 30px;
+}
+
+#form-relative-container {
+    justify-content: flex-end;
+    height: 6%;
+}
+
+#form-bg-id {
+    box-shadow: 0 0 1000px 120px rgba(0,0,0,1);
+    justify-content: center;
+    align-items: center;
+    background-color: darkslateblue;
+}
+
+.form-sign-up input {
+    border-radius: 8px;
+    margin: 3px;
+}
+
+#close-form-button {
+    left: 100px;
+}
+/*--------------Adaptation---------------*/
+
+@media (min-width: 1000px) {
+    .try-button {
+        font-size: 1.5em;
+        width: 30%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .welcome-page-content h1 {
+        font-size: 2em;
+    }
+
+    .welcome-page-content p {
+        font-size: 1em;
+    }
+
+    .popular-countries-col h2 {
+        font-size: 1.5em;
+    }
+
+    .popular-countries-boxes h3 {
+        font-size: 1em;
+    }
+
+    .popular-countries-boxes p {
+        font-size: 0.8em;
+    }
+
+    nav {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .popular-countries-boxes {
+        flex-flow: column;
+    }
+}
+
+@media (max-height: 480px) {
+    .welcome-page-content {
+        top: 17%;
+        left: 3%;
+    }
+
+    .welcome-page-content h1 {
+        font-size: 1.8em;
+    }
+
+    .welcome-page-content p {
+        margin-top: 47%;
+        font-size: 1em;
+    }
+
+    .try-button {
+        font-size: 1em;
+        width: 36%;
+    }
+}
+
+/*----------------Footer-----------------*/
+
+.footer {
+    bottom: 0;
+    background-color: darkslateblue;
+    opacity: 0.2;
+    color: aliceblue;
+    text-align: center;
 }
