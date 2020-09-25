@@ -79,18 +79,24 @@
             </div>
         </div>
     </div>
-    <div class="form-bg" id="form-bg-id">
-        <div class="form-sign-up" id="sign-up-form">
+    <div id="form-flex-container">
+        <div id="form-relative-container">
+            <!--        <button class="btn btn-danger" id="close-form-button">Закрити</button>-->
             <form class="form-container">
-                <input type="name" name="Ім'я" placeholder="Ім'я" required> <br>
-                <input type="surname" name="Прізвище" placeholder="Прізвище" required> <br>
-                <input type="email" name="Пошта" placeholder="Електронна адреса" required> <br>
-                <input type="password" name="Пароль" placeholder="Пароль" required>
+                <div class="form-inputs">
+                    <input type="name" name="Ім'я" placeholder="Ім'я" required> <br>
+                    <input type="surname" name="Прізвище" placeholder="Прізвище" required> <br>
+                    <input type="email" name="Пошта" placeholder="Електронна адреса" required> <br>
+                    <input type="password" name="Пароль" placeholder="Пароль" required> <br>
+                </div>
+                <button class="btn btn-success accept-sign-up-button">Зареєструватися</button>
             </form>
+            <div id="close-button">
+                <button type="button" class="close" id="form-close-button" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         </div>
-    </div>
-    <div id="form-relative-container">
-        <button class="btn btn-danger" id="close-form-button">Закрити</button>
     </div>
 
     <div class="footer">
