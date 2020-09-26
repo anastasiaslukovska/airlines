@@ -21,7 +21,7 @@
             <div class="navbar-header">
                 <a href="index.html" class="navbar-brand">Airlines</a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" id="toggler-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Квитки</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Про нас</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Контакти</a></li>
-                        <button class="btn btn-dark">Увійти</button>
+                        <button class="btn btn-dark" id="login-button">Увійти</button>
                         <button class="btn btn-success" id="sign-up-button">Зареєструватися</button>
                     </ul>
                 </div>
@@ -81,7 +81,6 @@
     </div>
     <div id="form-flex-container">
         <div id="form-relative-container">
-            <!--        <button class="btn btn-danger" id="close-form-button">Закрити</button>-->
             <form class="form-container">
                 <div class="form-inputs">
                     <input type="name" name="Ім'я" placeholder="Ім'я" required> <br>
@@ -96,6 +95,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+        </div>
+    </div>
+
+    <div id="login-form-container">
+        <form class="login-form">
+            <div class="login-inputs">
+                <input type="email" name="Пошта" placeholder="Електронна адреса" required><br>
+                <input type="password" name="Пароль" placeholder="Пароль" required>
+            </div>
+            <button class="btn btn-success accept-login-button">Увійти</button>
+        </form>
+        <div id="login-close-button">
+            <button type="button" class="close" id="form-close-button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </div>
 
