@@ -49,9 +49,26 @@
                 </p>
                 <a href="index.html" class="btn btn-success try-button" role="button">Спробувати</a>
             </div>
+            <div class="search">
+                <div class="search-col">
+                    <h1>Пошук білетів</h1>
+                </div>
+                <div class="search-form-container">
+                    <form class="search-form">
+                        <input type="text" name="from" placeholder="Країна вильоту" required>
+                        <input type="text" name="to" placeholder="Країна прибуття" required>
+                        <input type="date" name="date" placeholder="Дата" required>
+                        <button class="btn btn-success search-button">Пошук</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
+    <div class="search-results">
+        
+    </div>
+    
     <div class="start-page-content">
         <div class="popular-countries">
             <div class="popular-countries-col">
@@ -79,6 +96,7 @@
             </div>
         </div>
     </div>
+
     <div id="form-flex-container">
         <div id="form-relative-container">
             <form class="form-container">
