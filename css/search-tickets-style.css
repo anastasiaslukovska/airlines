@@ -1,0 +1,25 @@
+body {
+    background-image: url('../images/bg.png');
+}
+
+/*---------------Navigation----------------*/
+
+nav {
+    opacity: 0.5;
+}
+
+.nav-item {
+    margin: 0 120px 0 0;
+}
+
+/*----------------Search-Tickets Page----------------*/
+
+.search-tickets-page {
+    width: 100%;
+    height: 30vh;
+    background-image: url('../images/start-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
