@@ -1,5 +1,7 @@
 body {
-    background-image: url('../images/bg.png');
+    
+    background: rgb(245, 147, 65);
+    background: linear-gradient(90deg, rgba(245, 147, 65, 1) 0%, rgba(247, 168, 118, 1) 44%, rgba(148, 105, 98, 1) 100%);
 }
 
 /*---------------Navigation----------------*/
@@ -17,7 +19,6 @@ nav {
 .search-tickets-page {
     width: 100%;
     height: 30vh;
-    background-image: url('../images/start-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
