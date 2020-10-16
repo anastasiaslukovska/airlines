@@ -141,7 +141,6 @@ nav {
 .popular-countries-boxes p {
     font-family: 'Kelly Slab', cursive;
     font-size: 1.5em;
-    ;
     color: #658aa4;
 }
 
@@ -180,7 +179,7 @@ nav {
     top: 30%;
     left: 35%;
     background-image: radial-gradient(circle farthest-corner at -8.9% 51.2%, rgba(255, 124, 0, 1) 0%, rgba(255, 124, 0, 1) 15.9%, rgba(255, 163, 77, 1) 15.9%, rgba(255, 163, 77, 1) 24.4%, rgba(19, 30, 37, 1) 24.5%, rgba(19, 30, 37, 1) 66%);
-    box-shadow: 0 0 1000px 120px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 100px 30px rgba(0, 0, 0, 1);
     opacity: 0.97;
     align-items: center;
     justify-content: center;
@@ -247,7 +246,7 @@ nav {
     align-items: center;
     text-align: center;
     background-image: radial-gradient(circle farthest-corner at -8.9% 51.2%, rgba(255, 124, 0, 1) 0%, rgba(255, 124, 0, 1) 15.9%, rgba(255, 163, 77, 1) 15.9%, rgba(255, 163, 77, 1) 24.4%, rgba(19, 30, 37, 1) 24.5%, rgba(19, 30, 37, 1) 66%);
-    box-shadow: 0 0 1000px 120px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 100px 30px rgba(0, 0, 0, 1);
     opacity: 0.97;
 }
 
