@@ -25,4 +25,9 @@ jQuery('document').ready(function () {
         document.getElementById("login-close-button").style.display = "none";
         document.getElementById("login-form-container").style.display = "none";
     });
+    
+    //Search-Tickets scripts
+    
+    $('.tickets').append('<div class="ticket"> <div class="country-from"> <h2>Країна відправлення</h2> <h4>Час відправлення: 13:45</h4> </div> <div class="arrow-right"> <img src="images/arrow-right.png" alt="arrow-right"> </div> <div class="country-to"> <h2>Країна прибуття</h2> <h4>Час прибуття: 16:21</h4> </div> <div class="price"> <h3>1565 грн.</h3><button class="btn btn-success" id="booking-btn">Забронювати</button></div> </div>');
+    // if quantity of tickets < 3 --> footer margin-top -120px; else 30px;
 });
