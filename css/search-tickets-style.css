@@ -97,6 +97,12 @@ nav {
 
 /*----------------Tickets-------------------*/
 
+#result-h {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
 .tickets {
     display: flex;
     position: relative;
@@ -110,10 +116,10 @@ nav {
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    top: 50px;
+    top: 20px;
     width: 1300px;
     height: 200px;
-    background-image: url("..//images/ticket-bg3.jpg");
+    background-image: url("..//images/ticket-bg.jpg");
     background-size: cover;
     border-radius: 3%/15%;
     text-align: center;
