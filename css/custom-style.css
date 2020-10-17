@@ -103,14 +103,6 @@ nav {
     opacity: 1;
 }
 
-.box {
-    margin-bottom: 20px;
-    width: 1200px;
-    height: 110px;
-    background-color: antiquewhite;
-    text-align: center;
-}
-
 .search-form {
     display: flex;
 }
@@ -300,6 +292,17 @@ nav {
     height: 0;
 }
 
+/*----------------Footer-----------------*/
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: darkslateblue;
+    opacity: 0.2;
+    color: aliceblue;
+    text-align: center;
+}
+
 /*--------------Adaptation---------------*/
 
 @media (min-width: 1000px) {
@@ -398,15 +401,4 @@ nav {
         font-size: 1em;
         width: 36%;
     }
-}
-
-/*----------------Footer-----------------*/
-
-.footer {
-    bottom: 0;
-    width: 100%;
-    background-color: darkslateblue;
-    opacity: 0.2;
-    color: aliceblue;
-    text-align: center;
 }
