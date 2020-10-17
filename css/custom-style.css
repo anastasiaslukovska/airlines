@@ -44,13 +44,18 @@ nav {
     width: 100%;
 }
 
+.welcome-page {
+    position: relative;
+    height: 100vh;
+}
+
 /*-----------------Search---------------*/
 
 .search {
     position: absolute;
+    bottom: 200px;
     display: flex;
     flex-flow: column;
-    height: 100vh;
     width: 100%;
 }
 
