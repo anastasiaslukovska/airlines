@@ -57,33 +57,30 @@ nav {
     display: flex;
     flex-flow: column;
     width: 100%;
-}
-
-.search-col {
-    display: flex;
-    width: 100%;
-    height: 80%;
-    justify-content: center;
-    align-items: flex-end;
+    border: #723232 solid;
+    align-items: center;
 }
 
 .search-form-container {
     display: flex;
     justify-content: center;
     padding-top: 1%;
+    border: #423232 solid;
+    width: 100%;
 }
 
 .search-form-container input {
     display: inline-block;
-    width: 300px;
     appearance: none;
     outline: 0;
+    width: 300px;
     border: 1px solid fade(white, 40%);
     background-color: fade(white, 20%);
     height: inherit;
     border-radius: 3px;
     padding: 5px 5px;
     margin: -3px 10px -3px auto;
+    margin-bottom: 5px;
     text-align: center;
     font-size: 18px;
     color: black;
@@ -105,6 +102,7 @@ nav {
 
 .search-form {
     display: flex;
+    align-items: stretch;
 }
 
 .search-button {
@@ -166,7 +164,7 @@ nav {
 
 /*-------------Sign Up Form--------------*/
 
-#form-relative-container {
+#sign-up-container {
     min-width: 250px;
     min-height: 300px;
     display: none;
@@ -314,7 +312,7 @@ nav {
 
 @media (max-width: 800px) {
 
-    #form-relative-container,
+    #sign-up-container,
     #close-button {
         top: 30%;
         left: calc(50% - 125px);
@@ -331,7 +329,7 @@ nav {
 }
 
 @media (max-width: 1050px) {
-    #form-relative-container {
+    #sign-up-container {
         max-height: 350px;
 
     }
@@ -347,6 +345,18 @@ nav {
 @media (max-width: 1200px) {
     .nav-item {
         margin: 0 50px 0 0;
+    }
+}
+
+@media (max-width: 1070px) {
+    .search-form-container input {
+        width: 100%;
+    } 
+}
+
+@media (max-width: 580px) {
+    .search-form {
+        flex-wrap: wrap;
     }
 }
 
