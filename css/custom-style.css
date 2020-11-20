@@ -53,11 +53,10 @@ nav {
 
 .search {
     position: absolute;
-    bottom: 200px;
+    bottom: 150px;
     display: flex;
     flex-flow: column;
     width: 100%;
-    border: #723232 solid;
     align-items: center;
 }
 
@@ -65,7 +64,6 @@ nav {
     display: flex;
     justify-content: center;
     padding-top: 1%;
-    border: #423232 solid;
     width: 100%;
 }
 
@@ -74,13 +72,9 @@ nav {
     appearance: none;
     outline: 0;
     width: 300px;
-    border: 1px solid fade(white, 40%);
-    background-color: fade(white, 20%);
     height: inherit;
-    border-radius: 3px;
     padding: 5px 5px;
-    margin: -3px 10px -3px auto;
-    margin-bottom: 5px;
+    margin: -3px 10px -3px 5px;
     text-align: center;
     font-size: 18px;
     color: black;
@@ -96,7 +90,7 @@ nav {
 
 .search-form-container input:focus {
     background-color: white;
-    color: @prim;
+    width: 315px;
     opacity: 1;
 }
 
@@ -185,11 +179,8 @@ nav {
     display: block;
     appearance: none;
     outline: 0;
-    border: 1px solid fade(white, 40%);
-    background-color: fade(white, 20%);
     width: 90%;
     height: inherit;
-    border-radius: 3px;
     padding: 5px 5px;
     margin: -7px auto -7px auto;
     text-align: center;
@@ -208,7 +199,6 @@ nav {
 .form-inputs input:focus {
     background-color: white;
     width: 100%;
-    color: @prim;
     opacity: 1;
 }
 
@@ -220,7 +210,7 @@ nav {
     min-width: 250px;
     display: none;
     width: 29.5%;
-    height: 0%;
+    height: 0;
     position: fixed;
     top: 30%;
     left: 35%;
@@ -249,11 +239,10 @@ nav {
     display: block;
     appearance: none;
     outline: 0;
-    border: 1px solid fade(white, 40%);
-    background-color: fade(white, 20%);
+ /*   border: 1px solid fade(white, 40%);*/
+    /*background-color: fade(white, 20%);*/
     width: 90%;
     height: inherit;
-    border-radius: 3px;
     padding: 5px 5px;
     margin: -7px auto -7px auto;
     text-align: center;
@@ -272,7 +261,6 @@ nav {
 .login-inputs input:focus {
     background-color: white;
     width: 100%;
-    color: @prim;
     opacity: 1;
 }
 
