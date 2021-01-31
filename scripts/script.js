@@ -75,14 +75,6 @@ $('document').ready(function () {
     //Search-Tickets scripts
 
     // if quantity of tickets < 3 --> footer margin-top -120px; else 30px;
-    $('#booking-btn').on('click', function () {
-        document.getElementById("booking-close-button").style.display = "block";
-        document.getElementById("booking-form-container").style.display = "flex";
-    });
-    $('#booking-close-button').on('click', function () {
-        document.getElementById("booking-close-button").style.display = "none";
-        document.getElementById("booking-form-container").style.display = "none";
-    });
 
     $('#search-button').on('click', function () {
         var from = document.getElementsByName('from')[0].value;
@@ -102,8 +94,6 @@ $('document').ready(function () {
             },
             success: function (data) {
                 var result = JSON.parse( data );
-                alert(result);
-                alert(result.length);
                 for(let i = 0; i < result.length; i++){
                     document.getElementById('tickets').innerHTML += '<div class="ticket"> <div class="country-from"> <h2>'
                         + result[i][3] + '</h2> <h4>Час відправлення: ' + result[i][7] + '</h4> </div> <div class="arrow-right"> <img src="images/arrow-right.png" alt="arrow-right"> </div> <div class="country-to"> <h2>'
@@ -115,5 +105,14 @@ $('document').ready(function () {
                 console.log(JSON.stringify(error));
             }
         });
+    });
+
+    $('#tickets').on('click', '#booking-btn', function () {
+        document.getElementById("booking-close-button").style.display = "block";
+        document.getElementById("booking-form-container").style.display = "flex";
+    });
+    $('#booking-close-button').on('click', function () {
+        document.getElementById("booking-close-button").style.display = "none";
+        document.getElementById("booking-form-container").style.display = "none";
     });
 });
