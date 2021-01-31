@@ -74,7 +74,6 @@ $('document').ready(function () {
 
     //Search-Tickets scripts
 
-    $('.tickets').append('<div class="ticket"> <div class="country-from"> <h2>Країна відправлення</h2> <h4>Час відправлення: 13:45</h4> </div> <div class="arrow-right"> <img src="images/arrow-right.png" alt="arrow-right"> </div> <div class="country-to"> <h2>Країна прибуття</h2> <h4>Час прибуття: 16:21</h4> </div> <div class="price"> <h3>1565 грн.</h3><button class="btn btn-success" id="booking-btn">Забронювати</button></div> </div>');
     // if quantity of tickets < 3 --> footer margin-top -120px; else 30px;
     $('#booking-btn').on('click', function () {
         document.getElementById("booking-close-button").style.display = "block";
@@ -83,5 +82,38 @@ $('document').ready(function () {
     $('#booking-close-button').on('click', function () {
         document.getElementById("booking-close-button").style.display = "none";
         document.getElementById("booking-form-container").style.display = "none";
+    });
+
+    $('#search-button').on('click', function () {
+        var from = document.getElementsByName('from')[0].value;
+        var to = document.getElementsByName('to')[0].value;
+        var date = new String(document.getElementsByName('date')[0].value);
+        var year = date.substring(0, 4);
+        var month = date.substring(5, 7);
+        var day = date.substring(8, 10);
+        $.ajax({
+            url: '/ajax/search-tickets.php',
+            type: 'GET',
+            cache: false,
+            data: { 'from': from, 'to': to, 'date': date },
+            dataType: 'html',
+            beforeSend: function (xhr) {
+                $('#search-button').prop("disabled", true);
+            },
+            success: function (data) {
+                var result = JSON.parse( data );
+                alert(result);
+                alert(result.length);
+                for(let i = 0; i < result.length; i++){
+                    document.getElementById('tickets').innerHTML += '<div class="ticket"> <div class="country-from"> <h2>'
+                        + result[i][3] + '</h2> <h4>Час відправлення: ' + result[i][7] + '</h4> </div> <div class="arrow-right"> <img src="images/arrow-right.png" alt="arrow-right"> </div> <div class="country-to"> <h2>'
+                        + result[i][4] + '</h2> <h4>Час прибуття: ' + result[i][8] + '</h4> </div> <div class="price"> <h3>' + result[i][10] + ' грн.</h3><button class="btn btn-success" id="booking-btn">Забронювати</button></div> </div>';
+                }
+                $('#search-button').prop("disabled", false);
+            },
+            error: (error) => {
+                console.log(JSON.stringify(error));
+            }
+        });
     });
 });

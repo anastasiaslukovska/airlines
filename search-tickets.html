@@ -41,10 +41,10 @@
             </div>
             <div class="search-form-container">
                 <form class="search-form">
-                    <input type="text" name="from" placeholder="Країна вильоту" required>
-                    <input type="text" name="to" placeholder="Країна прибуття" required>
-                    <input type="date" name="date" placeholder="Дата" required>
-                    <button class="btn btn-success search-button">Пошук</button>
+                    <input type="text" name="from" placeholder="Місто вильоту" required>
+                    <input type="text" name="to" placeholder="Місто прибуття" required>
+                    <input type="date" name="date" placeholder="Дата" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                    <button class="btn btn-success search-button" id="search-button">Пошук</button>
                 </form>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <h2>Доступні пропозиції:</h2>
         </div>
 
-        <div class="tickets">
+        <div class="tickets" id="tickets">
             <!--
             <div class="ticket">
                 <div class="country-from">
