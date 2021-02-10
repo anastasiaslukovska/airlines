@@ -165,8 +165,11 @@ nav {
 
 .search-form-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding-top: 1%;
+    /*border: solid brown;*/
 }
 
 .search-form-container input {
@@ -198,6 +201,7 @@ nav {
 
 .search-form {
     display: flex;
+    /*border:solid aquamarine;*/
 }
 
 .search-button {
@@ -205,6 +209,42 @@ nav {
     width: 120px;
 }
 
+.input-hints-container {
+    display: flex;
+}
+
+.input-hint1 {
+    /*border: solid cyan;*/
+    width: 300px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.input-hint2 {
+    /*border: solid cyan;*/
+    width: 300px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.input-hint3 {
+    /*border: solid cyan;*/
+    width: 435px;
+    height: 100px;
+}
+
+.hint {
+    /*border: solid darkorchid;*/
+    width: 300px;
+    height: 50px;
+    background-color: cadetblue;
+    opacity: 0.5;
+}
+
+#from-select {
+    width: 300px;
+    opacity: 0;
+}
 /*----------------Tickets-------------------*/
 
 #result-h {

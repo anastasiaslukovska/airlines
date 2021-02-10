@@ -115,4 +115,35 @@ $('document').ready(function () {
         document.getElementById("booking-close-button").style.display = "none";
         document.getElementById("booking-form-container").style.display = "none";
     });
+
+    //input-hints
+    $(document.getElementsByName('from')[0]).on('input',function () {
+        document.getElementById('from-select').innerHTML = "";
+        var from = document.getElementsByName('from')[0].value;
+        if(from != "") {
+            document.getElementById('from-select').style.opacity = 0.5;
+            $.ajax({
+                url: '/ajax/from-hint.php',
+                type: 'GET',
+                cache: false,
+                data: {'from': from},
+                dataType: 'html',
+                success: function (data) {
+                    var result = JSON.parse(data);
+                    for (let i = 0; i < result.length; i++) {
+                        if ((i > 0 && result[i][0] != result[i - 1][0]) || i == 0) {
+                            document.getElementById('from-select').innerHTML += '<option>' + result[i][0] + '</option>>';
+                        }
+                    }
+                    //alert(result);
+                },
+                error: (error) => {
+                    console.log(JSON.stringify(error));
+                }
+            });
+        }
+        else{
+            document.getElementById('from-select').style.opacity = 0;
+        }
+    });
 });
