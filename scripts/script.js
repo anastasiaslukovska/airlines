@@ -26,13 +26,13 @@ $('document').ready(function () {
         document.getElementById("login-form-container").style.display = "none";
     });
 
-    $('#accept-sign-up-button').on('click', function () {
+    /*$('#accept-sign-up-button').on('click', function () {
         var name = document.getElementsByName('name')[0].value;
         var surname = document.getElementsByName('surname')[0].value;
         var email = document.getElementsByName('email')[0].value;
         var password = document.getElementsByName('password')[0].value;
         $.ajax({
-            url: '/ajax/sign-up.php',
+            url: '/php/sign-up.php',
             type: 'POST',
             cache: false,
             data: { 'name': name, 'surname': surname, 'email': email, 'password': password },
@@ -49,12 +49,12 @@ $('document').ready(function () {
             }
         });
     });
-
-    $('#accept-login-button').on('click', function () {
+*/
+    /*$('#accept-login-button').on('click', function () {
         var email = document.getElementsByName('login-email')[0].value;
         var password = document.getElementsByName('login-password')[0].value;
         $.ajax({
-            url: '/ajax/login.php',
+            url: '/php/login.php',
             type: 'GET',
             cache: false,
             data: { 'email': email, 'password': password },
@@ -70,7 +70,7 @@ $('document').ready(function () {
                 console.log(JSON.stringify(error));
             }
         });
-    });
+    });*/
 
     //Search-Tickets scripts
 
@@ -80,11 +80,8 @@ $('document').ready(function () {
         var from = document.getElementsByName('from')[0].value;
         var to = document.getElementsByName('to')[0].value;
         var date = new String(document.getElementsByName('date')[0].value);
-        var year = date.substring(0, 4);
-        var month = date.substring(5, 7);
-        var day = date.substring(8, 10);
         $.ajax({
-            url: '/ajax/search-tickets.php',
+            url: '/php/search-tickets.php',
             type: 'GET',
             cache: false,
             data: { 'from': from, 'to': to, 'date': date },
@@ -117,13 +114,13 @@ $('document').ready(function () {
     });
 
     //input-hints
-    $(document.getElementsByName('from')[0]).on('input',function () {
+    $(document.getElementsByName('from')[0]).on('input', function () {
         document.getElementById('from-select').innerHTML = "";
         var from = document.getElementsByName('from')[0].value;
         if(from != "") {
             document.getElementById('from-select').style.opacity = 0.5;
             $.ajax({
-                url: '/ajax/from-hint.php',
+                url: '/php/from-hint.php',
                 type: 'GET',
                 cache: false,
                 data: {'from': from},
@@ -132,10 +129,9 @@ $('document').ready(function () {
                     var result = JSON.parse(data);
                     for (let i = 0; i < result.length; i++) {
                         if ((i > 0 && result[i][0] != result[i - 1][0]) || i == 0) {
-                            document.getElementById('from-select').innerHTML += '<option>' + result[i][0] + '</option>>';
+                            document.getElementById('from-select').innerHTML += '<option value="' + result[i][0] + '">' + result[i][0] + '</option>';
                         }
                     }
-                    //alert(result);
                 },
                 error: (error) => {
                     console.log(JSON.stringify(error));
@@ -145,5 +141,60 @@ $('document').ready(function () {
         else{
             document.getElementById('from-select').style.opacity = 0;
         }
+    });
+
+    $('#from').blur(function () {
+            document.getElementById('from-select').style.opacity = 0;
+        })
+        .focus(function () {
+            if(document.getElementsByName('from')[0].value != ""){
+                document.getElementById('from-select').style.opacity = 0.5;
+            }
+        });
+
+    $('#from-select').on('change', function () {
+        $('#from').val(document.getElementById('from-select').options[document.getElementById('from-select').options.selectedIndex].value);
+    });
+
+    $(document.getElementsByName('to')[0]).on('input',function () {
+        document.getElementById('to-select').innerHTML = "";
+        var to = document.getElementsByName('to')[0].value;
+        if(to != "") {
+            document.getElementById('to-select').style.opacity = 0.5;
+            $.ajax({
+                url: '/php/to-hint.php',
+                type: 'GET',
+                cache: false,
+                data: {'to': to},
+                dataType: 'html',
+                success: function (data) {
+                    var result = JSON.parse(data);
+                    for (let i = 0; i < result.length; i++) {
+                        if ((i > 0 && result[i][0] != result[i - 1][0]) || i == 0) {
+                            document.getElementById('to-select').innerHTML += '<option value="' + result[i][0] + '">' + result[i][0] + '</option>';
+                        }
+                    }
+                },
+                error: (error) => {
+                    console.log(JSON.stringify(error));
+                }
+            });
+        }
+        else {
+            document.getElementById('to-select').style.opacity = 0;
+        }
+    });
+
+    $('#to').blur(function () {
+            document.getElementById('to-select').style.opacity = 0;
+        })
+        .focus(function () {
+            if(document.getElementsByName('to')[0].value != ""){
+                document.getElementById('to-select').style.opacity = 0.5;
+            }
+        });
+
+    $('#to-select').on('change', function () {
+        $('#to').val(document.getElementById('to-select').options[document.getElementById('to-select').options.selectedIndex].value);
     });
 });

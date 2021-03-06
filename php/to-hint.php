@@ -1,9 +1,10 @@
 <?php
+
 $servername = "localhost";
-$database = "users";
+$database = "tickets";
 $username = "mysql";
 $password = "mysql";
-$table_name = 'accounts';
+
 // Устанавливаем соединение
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Проверяем соединение
@@ -11,20 +12,16 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connected successfully";
+//echo "Connected successfully";
 
-$email = $_GET['email'];
-$password = $_GET['password'];
+$to = $_GET['to'];
 
-$sql = "SELECT email, password FROM `accounts` WHERE email = '$email'";
+$sql = "SELECT city_to FROM `flights` WHERE city_to LIKE '$to%'";
 
 $result = $conn->query($sql) or die($conn->error);
-$row = $result->fetch_assoc();
+$result = $result->fetch_all();
+//$row = $result->fetch_assoc();
 
-if ($row['password'] == $password) {
-    echo "Successfully logged in";
-} else {
-    echo "You wrote wrong email or password!";
-}
+echo json_encode($result);
+
 mysqli_close($conn);
-?>

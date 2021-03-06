@@ -169,7 +169,6 @@ nav {
     align-items: center;
     justify-content: center;
     padding-top: 1%;
-    /*border: solid brown;*/
 }
 
 .search-form-container input {
@@ -177,7 +176,7 @@ nav {
     width: 300px;
     appearance: none;
     outline: 0;
-    height: inherit;
+    height: 51px;
     padding: 5px 5px;
     margin: -3px 10px -3px auto;
     text-align: center;
@@ -187,6 +186,7 @@ nav {
     font-weight: 300;
     opacity: 0.7;
     border-radius: 10px;
+
 }
 
 .search-form-container input:hover {
@@ -194,56 +194,30 @@ nav {
 }
 
 .search-form-container input:focus {
-    background-color: white;
     width: 315px;
     opacity: 1;
 }
 
 .search-form {
     display: flex;
-    /*border:solid aquamarine;*/
 }
 
 .search-button {
-    height: 45px;
+    height: inherit;
     width: 120px;
 }
 
-.input-hints-container {
-    display: flex;
+.input-hint {
+    width: inherit;
+    height: 0px;
 }
 
-.input-hint1 {
-    /*border: solid cyan;*/
-    width: 300px;
-    height: 100px;
-    margin-right: 10px;
-}
-
-.input-hint2 {
-    /*border: solid cyan;*/
-    width: 300px;
-    height: 100px;
-    margin-right: 10px;
-}
-
-.input-hint3 {
-    /*border: solid cyan;*/
-    width: 435px;
-    height: 100px;
-}
-
-.hint {
-    /*border: solid darkorchid;*/
-    width: 300px;
-    height: 50px;
-    background-color: cadetblue;
-    opacity: 0.5;
-}
-
-#from-select {
-    width: 300px;
+#from-select, #to-select {
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    transition-duration: 0.25s;
+    border-radius: 10px;
 }
 /*----------------Tickets-------------------*/
 
@@ -297,23 +271,41 @@ nav {
     left: 15%;
     box-shadow: 0 0 100px 30px rgba(0, 0, 0, 1);
     opacity: 0.97;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: lightseagreen solid;
+    /*border: lightseagreen solid;*/
     background-color: lemonchiffon;
+    border-radius: 30px;
 }
 
 #booking-close-button {
-    min-width: 195px;
+    /*min-width: 195px;*/
+    /*border: solid darkorchid;*/
     display: none;
-    position: fixed;
+    position: inherit;
     top: 16%;
     right: 16%;
-    width: 19.5%;
+    /*width: 19.5%;*/
     height: 0;
 }
 
+.booking-form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#plane-seats {
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    /*border: solid darkorchid;*/
+}
+
+#order-details {
+    width: 67%;
+    height: 100%;
+    text-align: center;
+    /*border: solid chartreuse;*/
+}
 /*-----------------Footer-------------------*/
 
 .footer {

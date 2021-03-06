@@ -1,4 +1,7 @@
 <?php
+
+require "session.php";
+
 $servername = "localhost";
 $database = "users";
 $username = "mysql";
@@ -11,16 +14,16 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connected successfully";
+//echo "Connected successfully";
 
 $name = $_POST['name'];
 $surname = $_POST['surname'];
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-$sql_check = "SELECT EXISTS(SELECT email FROM `accounts` WHERE email = '$email')";
+$sql_check = "SELECT * FROM `accounts` WHERE EXISTS(SELECT 1 FROM `accounts` WHERE email = '$email')";
 
-if($conn->query($sql_check))
+if(mysqli_num_rows($conn->query($sql_check)) != 0)
 {
     die("Account with such an email already exists");
 }
@@ -28,9 +31,9 @@ if($conn->query($sql_check))
 $sql = "INSERT INTO `accounts` (`name`, `surname`, `email`, `password`) VALUES ('$name', '$surname', '$email', '$password')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    header('Location: /');
+    exit();
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
-?>

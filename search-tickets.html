@@ -41,24 +41,27 @@
             </div>
             <div class="search-form-container">
                 <form class="search-form">
-                    <input type="text" name="from" placeholder="Місто вильоту" required autocomplete="off">
-                    <input type="text" name="to" placeholder="Місто прибуття" required autocomplete="off">
-                    <input type="date" name="date" placeholder="Дата" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
-                    <button class="btn btn-success search-button" id="search-button">Пошук</button>
+                    <div>
+                        <input list="from-select" type="text" name="from" id="from" placeholder="Місто вильоту" required autocomplete="off">
+                        <div class="input-hint" id="from-hint">
+                            <datalist name="from-select" id="from-select">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div>
+                        <input list="to-select" type="text" name="to" id="to" placeholder="Місто прибуття" required autocomplete="off">
+                        <div class="input-hint" id="to-hint">
+                            <datalist name="to-select" id="to-select">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="date" name="date" placeholder="Дата" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                    </div>
+                    <div>
+                        <button class="btn btn-success search-button" id="search-button">Пошук</button>
+                    </div>
                 </form>
-                <div class="input-hints-container">
-                    <div class="input-hint1">
-                        <select name="sweets" multiple="multiple" id="from-select">
-
-                        </select>
-                    </div>
-                    <div class="input-hint2">
-
-                    </div>
-                    <div class="input-hint3">
-
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -122,7 +125,15 @@
     </div>
 
     <div id="booking-form-container">
+        <!--<form class="booking-form">
+            <div id="plane-seats">
 
+            </div>
+            <div id="order-details">
+
+            </div>
+        </form>-->
+        <iframe src="boeing-737.html" frameborder="0" width="100%"></iframe>
         <div id="booking-close-button">
             <button type="button" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

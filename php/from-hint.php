@@ -1,4 +1,6 @@
 <?php
+
+require "session.php";
 $servername = "localhost";
 $database = "tickets";
 $username = "mysql";
@@ -24,4 +26,3 @@ $result = $result->fetch_all();
 echo json_encode($result);
 
 mysqli_close($conn);
-?>
